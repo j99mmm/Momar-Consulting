@@ -5,40 +5,39 @@
   <title>Momar Consulting | Digitalización y Automatización</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Momar Consulting: servicios de digitalización, marketing digital y automatización para pymes y autónomos.">
+
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-soft: #dbeafe;
-      --accent: #f97316;
-      --bg: #020617;
-      --bg-soft: #f3f4ff;
-      --text-main: #0f172a;
-      --text-muted: #6b7280;
-      --card-bg: #ffffff;
-      --radius-lg: 1rem;
+      --dark: #1C231D;       /* Negro / verde oscuro del logo */
+      --gold: #888875;       /* Dorado suave */
+      --soft-bg: #F4F4F4;    /* Gris claro del fondo */
+      --text: #1C231D;
+      --muted: #6B6F6C;
+      --white: #FFFFFF;
+      --radius: 1rem;
     }
 
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: radial-gradient(circle at top left, #e0f2fe 0, #eff6ff 40%, #ffffff 100%);
+      color: var(--dark);
+      background: linear-gradient(to bottom right, #FAFAFA, #F4F4F4);
       line-height: 1.5;
     }
+
     a {
       text-decoration: none;
       color: inherit;
     }
 
     /* HEADER */
-
     header {
       padding: 0.9rem 1.5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -46,277 +45,242 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(30,64,175,0.85));
-      color: #e5e7eb;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 2px solid var(--dark);
     }
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.8rem;
     }
-    .brand-logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: #0b1120;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+
     .brand-logo img {
-      max-width: 100%;
-      max-height: 100%;
+      height: 48px;
+      width: auto;
       display: block;
     }
+
     .brand-text {
       display: flex;
       flex-direction: column;
     }
+
     .brand-name {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      color: var(--dark);
     }
+
     .brand-tagline {
-      font-size: 0.75rem;
-      color: #cbd5f5;
-    }
-    .header-right {
       font-size: 0.8rem;
-      color: #e5e7eb;
-      opacity: 0.9;
+      color: var(--gold);
+      font-weight: 500;
     }
 
-    /* LAYOUT GENERAL */
-
+    /* CONTAINER */
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 1.5rem 3rem;
+      padding: 1.5rem;
     }
 
+    /* BADGE */
     .badge {
       display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      background: rgba(28,35,29,0.08);
+      border: 1px solid rgba(28,35,29,0.2);
       font-size: 0.75rem;
-      background: rgba(59,130,246,0.08);
-      color: var(--primary-dark);
-      margin-bottom: 0.9rem;
-      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 999px;
+      color: var(--dark);
+      margin-bottom: 1rem;
     }
 
+    /* HERO */
     .hero {
-      padding: 2.2rem 0 2.5rem;
+      padding: 2rem 0 2.5rem;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 2rem;
       align-items: center;
     }
+
     .hero h1 {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
+      font-size: clamp(2rem, 4vw, 2.7rem);
       margin: 0 0 1rem;
+      font-weight: 700;
+      color: var(--dark);
     }
+
     .hero p {
       margin: 0 0 1.5rem;
-      color: var(--text-muted);
+      color: var(--muted);
     }
+
     .highlight {
+      color: var(--gold);
       font-weight: 600;
-      color: var(--text-main);
     }
+
+    /* BUTTONS */
+    .btn-primary {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      background: var(--dark);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-secondary {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid var(--dark);
+      background: transparent;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .btn-primary {
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(to right, var(--primary), var(--primary-dark));
-      color: #f9fafb;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 12px 30px rgba(37,99,235,0.35);
-    }
-    .btn-secondary {
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.8);
-      background: rgba(15,23,42,0.02);
-      color: var(--text-main);
-      font-weight: 500;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-    .whatsapp-hint {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      margin-bottom: 0.7rem;
     }
 
     .hero-box {
-      background: radial-gradient(circle at top left, #e0f2fe 0, #ffffff 60%);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-      border: 1px solid #e5e7eb;
-      font-size: 0.9rem;
+      background: var(--white);
+      padding: 1.4rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(28,35,29,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     }
+
     .hero-box h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem;
       font-size: 1.1rem;
-    }
-    .hero-box ul {
-      padding-left: 1.1rem;
-      margin: 0.25rem 0 0.75rem;
+      color: var(--dark);
     }
 
     .section-title {
       font-size: 1.4rem;
-      margin: 2rem 0 0.4rem;
+      margin-top: 2rem;
+      color: var(--dark);
     }
+
     .muted {
-      color: var(--text-muted);
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
+    /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      margin-top: 1.25rem;
+      margin-top: 1.2rem;
     }
+
     .card {
-      background: var(--card-bg);
-      border-radius: 0.9rem;
+      background: var(--white);
+      border: 1px solid rgba(28,35,29,0.1);
+      border-radius: var(--radius);
       padding: 1rem;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
-      font-size: 0.9rem;
     }
+
     .card h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-    .card ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.1rem;
+      color: var(--dark);
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3,1fr);
       gap: 1rem;
-      margin-top: 1.25rem;
     }
+
     .step-number {
+      background: var(--gold);
+      color: var(--white);
+      border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
+    /* ABOUT */
     .about {
-      margin-top: 1.5rem;
-      background: linear-gradient(to right, #ffffff, #e0f2fe);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.5rem;
-      border: 1px solid #dbeafe;
-      font-size: 0.9rem;
+      margin-top: 1rem;
+      background: var(--white);
+      border: 1px solid rgba(28,35,29,0.15);
+      padding: 1.2rem;
+      border-radius: var(--radius);
     }
 
+    /* CTA */
     .cta-section {
       margin-top: 2rem;
       padding: 1.5rem;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, #0f172a, #1e40af);
-      border: 1px solid rgba(191,219,254,0.6);
+      border-radius: var(--radius);
+      background: var(--dark);
+      color: var(--white);
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      align-items: center;
-      color: #e5e7eb;
-    }
-    .cta-section .section-title {
-      margin-top: 0;
-      color: #e5e7eb;
-    }
-    .cta-section .muted {
-      color: #cbd5f5;
     }
 
     form {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.2);
       display: grid;
       gap: 0.6rem;
-      font-size: 0.9rem;
-      background: rgba(15,23,42,0.85);
-      padding: 1rem;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148,163,184,0.6);
     }
-    label {
-      font-weight: 500;
-      font-size: 0.85rem;
-      color: #e5e7eb;
-    }
+
     input, textarea {
-      padding: 0.45rem 0.6rem;
-      border-radius: 0.6rem;
-      border: 1px solid #4b5563;
-      font-family: inherit;
-      font-size: 0.9rem;
-      background: #020617;
-      color: #e5e7eb;
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(0,0,0,0.15);
+      color: var(--white);
     }
+
     textarea {
       min-height: 80px;
       resize: vertical;
     }
 
-    .footer {
-      padding: 1.5rem;
-      font-size: 0.8rem;
-      color: #9ca3af;
+    /* FOOTER */
+    footer {
       text-align: center;
-    }
-    .footer a {
-      color: #6b7280;
-      text-decoration: underline;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 1.5rem;
     }
 
-    @media (max-width: 800px) {
-      header {
-        flex-direction: row;
-        gap: 0.5rem;
-      }
-      .header-right {
-        display: none;
-      }
+    @media(max-width:800px) {
       .hero {
         grid-template-columns: 1fr;
       }
       .cards, .steps, .cta-section {
         grid-template-columns: 1fr;
-      }
-      .container {
-        padding-inline: 1.1rem;
       }
     }
   </style>
@@ -326,7 +290,6 @@
 <header>
   <div class="brand">
     <div class="brand-logo">
-      <!-- Cambia el nombre del archivo si tu logo se llama distinto -->
       <img src="logo-momar.png" alt="Momar Consulting logo">
     </div>
     <div class="brand-text">
@@ -334,167 +297,114 @@
       <span class="brand-tagline">Digitalización & Automatización</span>
     </div>
   </div>
-  <div class="header-right">
-    Autónomo · Proyectos para pymes
-  </div>
 </header>
 
 <main class="container">
+
   <!-- HERO -->
-  <section class="hero" id="inicio">
+  <section class="hero">
     <div>
       <div class="badge">Digitalización · Marketing digital · Automatizaciones</div>
-      <h1>Digitalizo y automatizo tu negocio para que vendas más con menos fricción.</h1>
-      <p>
-        En Momar Consulting trabajo con pymes y autónomos que quieren dejar atrás procesos manuales:
-        <span class="highlight">CRM, automatizaciones, embudos y una presencia digital sencilla pero efectiva.</span>
-      </p>
+
+      <h1>Digitalizo y automatizo tu negocio para ayudarte a crecer sin complicaciones.</h1>
+
+      <p>Trabajo con pymes y autónomos que quieren optimizar procesos y aumentar su rendimiento mediante <span class="highlight">CRM, automatizaciones y presencia digital efectiva</span>.</p>
+
       <div class="hero-buttons">
-        <!-- CAMBIA EL NÚMERO DE WHATSAPP -->
-        <a href="https://wa.me/34600000000?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Momar%20Consulting" target="_blank" class="btn-primary">
-          💬 Pedir presupuesto por WhatsApp
-        </a>
-        <a href="#servicios" class="btn-secondary">
-          Ver servicios
-        </a>
+        <a href="https://wa.me/34600000000?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20Momar%20Consulting" class="btn-primary">💬 Pedir presupuesto</a>
+        <a href="#servicios" class="btn-secondary">Ver servicios</a>
       </div>
-      <div class="whatsapp-hint">Respuesta rápida y sin compromiso.</div>
     </div>
 
     <aside class="hero-box">
-      <h2>¿En qué te ayuda Momar Consulting?</h2>
+      <h2>¿Qué puedo hacer por tu empresa?</h2>
       <ul>
-        <li>Configuración y mejora de tu CRM (HubSpot u otras herramientas).</li>
-        <li>Automatización de tareas repetitivas (emails, seguimiento, recordatorios…).</li>
-        <li>Diseño de embudos simples para captar y nutrir leads.</li>
-        <li>Marketing digital práctico orientado a resultados.</li>
+        <li>Configuración y optimización de CRM.</li>
+        <li>Automatización de tareas repetitivas.</li>
+        <li>Embudos y procesos de captación.</li>
+        <li>Marketing digital práctico y orientado a resultados.</li>
       </ul>
-      <p><strong>Formato flexible:</strong> proyectos puntuales o acompañamiento mensual.</p>
     </aside>
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios">
-    <h2 class="section-title">Servicios</h2>
-    <p class="muted">Nos adaptamos al punto en el que está tu negocio. Empezamos por lo básico y crecemos sobre resultados.</p>
+  <h2 id="servicios" class="section-title">Servicios</h2>
+  <p class="muted">Soluciones prácticas, enfocadas en impactar tu día a día.</p>
 
-    <div class="cards">
-      <article class="card">
-        <h3>Digitalización de procesos</h3>
-        <p>Transformamos procesos manuales en flujos digitales claros y medibles.</p>
-        <ul>
-          <li>Mapeo de procesos actuales.</li>
-          <li>Diseño de flujos y herramientas.</li>
-          <li>Implantación y formación básica.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Marketing digital orientado a ventas</h3>
-        <p>Acciones sencillas y enfocadas en generar oportunidades reales.</p>
-        <ul>
-          <li>Estrategia básica de captación online.</li>
-          <li>Embudos simples para leads.</li>
-          <li>Email marketing y seguimiento.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Automatizaciones & CRM</h3>
-        <p>Menos tareas repetitivas, más foco en tus clientes.</p>
-        <ul>
-          <li>Selección y configuración de CRM.</li>
-          <li>Automatización de emails y tareas.</li>
-          <li>Dashboards de seguimiento.</li>
-        </ul>
-      </article>
+  <div class="cards">
+    <div class="card">
+      <h3>Digitalización de procesos</h3>
+      <p>Transformo procesos manuales en flujos optimizados.</p>
     </div>
-  </section>
 
-  <!-- CÓMO TRABAJO -->
-  <section id="metodo">
-    <h2 class="section-title">Cómo trabajamos</h2>
-    <p class="muted">Proceso simple y claro, pensado para que no pierdas tiempo.</p>
-
-    <div class="steps">
-      <article class="card">
-        <div class="step-number">1</div>
-        <h3>Sesión inicial</h3>
-        <p>Entendemos tu negocio, tus herramientas actuales y qué quieres mejorar.</p>
-      </article>
-
-      <article class="card">
-        <div class="step-number">2</div>
-        <h3>Propuesta clara</h3>
-        <p>Recibes una propuesta con alcance, plazos y precio cerrado, sin letra pequeña.</p>
-      </article>
-
-      <article class="card">
-        <div class="step-number">3</div>
-        <h3>Implementación y soporte</h3>
-        <p>Ponemos en marcha las soluciones, te explicamos cómo usarlas y te acompañamos en los primeros pasos.</p>
-      </article>
+    <div class="card">
+      <h3>Marketing digital</h3>
+      <p>Estrategias simples pero efectivas para aumentar visibilidad.</p>
     </div>
-  </section>
 
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi">
-    <h2 class="section-title">Sobre Momar Consulting</h2>
-    <div class="about">
-      <p>
-        En <strong>Momar Consulting</strong> nos especializamos en digitalización, marketing digital y automatizaciones para pymes y autónomos.
-        El objetivo es que tengas sistemas sencillos, que entiendas y que realmente utilices en el día a día.
-      </p>
-      <p>
-        Preferimos <strong>empezar pequeño, entregar rápido y mejorar sobre la marcha</strong> antes que proyectos eternos que nunca se implementan.
-      </p>
+    <div class="card">
+      <h3>Automatizaciones & CRM</h3>
+      <p>Automatización inteligente para ahorrar tiempo y escalar.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- CTA FINAL -->
-  <section id="contacto" class="cta-section">
+  <!-- METODO -->
+  <h2 class="section-title">Cómo trabajo</h2>
+
+  <div class="steps">
+    <div class="card">
+      <div class="step-number">1</div>
+      Sesión inicial
+    </div>
+
+    <div class="card">
+      <div class="step-number">2</div>
+      Propuesta clara
+    </div>
+
+    <div class="card">
+      <div class="step-number">3</div>
+      Implementación y soporte
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <h2 class="section-title">Sobre mí</h2>
+
+  <div class="about">
+    En <strong>Momar Consulting</strong> ofrezco servicios de digitalización, automatización y marketing digital.  
+    Trabajo con un enfoque simple: <strong>empezar pequeño, entregar rápido y mejorar sobre la marcha</strong>.
+  </div>
+
+  <!-- CONTACTO -->
+  <section class="cta-section">
     <div>
-      <h2 class="section-title">¿Hablamos de tu proyecto?</h2>
-      <p class="muted">
-        Cuéntanos qué quieres mejorar (captación de clientes, organización interna, seguimiento comercial…)
-        y te propondremos una solución adaptada a tu presupuesto.
-      </p>
-      <p style="font-size:0.9rem; margin-top:0.75rem;">
-        Puedes escribirnos por WhatsApp o rellenar el formulario. Te responderemos personalmente.
-      </p>
-      <a href="https://wa.me/34600000000?text=Hola,%20quiero%20hablar%20con%20Momar%20Consulting" target="_blank" class="btn-primary">
-        💬 Escribir por WhatsApp
-      </a>
+      <h2 class="section-title" style="color: var(--white);">¿Hablamos?</h2>
+      <p>Cuéntame qué quieres mejorar y recibirás una propuesta adaptada a tu negocio.</p>
+      <a href="https://wa.me/34600000000?text=Hola,%20quiero%20hablar%20con%20Momar%20Consulting" class="btn-primary">💬 Escribir por WhatsApp</a>
     </div>
 
-    <!-- FORMULARIO SIMPLE -->
-    <div>
-      <!-- Usa tu correo real aquí -->
-      <form action="https://formsubmit.co/TU_CORREO@EJEMPLO.COM" method="POST">
-        <input type="hidden" name="_subject" value="Nueva solicitud de presupuesto - Momar Consulting" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
+    <form action="https://formsubmit.co/TU_CORREO@EJEMPLO.COM" method="POST">
+      <input type="hidden" name="_subject" value="Nueva solicitud - Momar Consulting">
+      <input type="hidden" name="_captcha" value="false">
 
-        <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+      <label>Nombre</label>
+      <input type="text" name="nombre" required>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+      <label>Email</label>
+      <input type="email" name="email" required>
 
-        <label for="mensaje">¿Qué necesitas?</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación y qué te gustaría mejorar." required></textarea>
+      <label>Mensaje</label>
+      <textarea name="mensaje" required></textarea>
 
-        <button type="submit" class="btn-primary" style="justify-content:center; margin-top:0.3rem;">
-          Enviar solicitud de presupuesto
-        </button>
-      </form>
-    </div>
+      <button class="btn-primary" type="submit">Enviar</button>
+    </form>
   </section>
+
 </main>
 
-<footer class="footer">
-  © <span id="year"></span> Momar Consulting · Digitalización, marketing digital y automatización ·
-  <a href="mailto:TU_CORREO@EJEMPLO.COM">TU_CORREO@EJEMPLO.COM</a>
+<footer>
+  © <span id="year"></span> Momar Consulting · Todos los derechos reservados
 </footer>
 
 <script>
